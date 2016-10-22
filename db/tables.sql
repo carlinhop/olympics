@@ -1,6 +1,6 @@
 drop table if exists game cascade;
 drop table if exists athlete cascade;
-drop table if exists nation cascade;
+drop table if exists country cascade;
 drop table if exists sport cascade;
 drop table if exists event cascade;
 drop table if exists participation;
@@ -18,7 +18,7 @@ create table sport(
   -- participants_limit int4 not null
 );
 
-create table nation(
+create table country(
   id serial4 primary key,
   name varchar(255) not null check(name != '')
 );
@@ -27,7 +27,7 @@ create table athlete(
   id serial4 primary key,
   name varchar(255) not null check(name != '') ,
   sport int4 not null references sport(id) on update cascade,
-  nation int4 not null references nation(id) on update cascade 
+  country int4 not null references country(id) on update cascade 
 );
 
 create table event(
