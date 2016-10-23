@@ -1,10 +1,10 @@
 class Athlete
-  attr_accessor :name, :sport, :nation
-  
-  def initialize(name, sport, nation)
+  attr_accessor :name, :sport, :country
+
+  def initialize(options)
     @id = nil
-    @name = name
-    @sport = sport
-    @nation = nation
+    @name = options[:name]
+    @sport = options[:sport]
+    @country = options[:country]
   end
 end

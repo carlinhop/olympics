@@ -1,11 +1,13 @@
 class Event
-  attr_accessor :sport, :date, :time
+  attr_accessor :sport, :date, :time, :athletes, :results
   
-  def initialize(sport, date, time)
+  def initialize(options)
     @id = nil
-    @sport = sport
-    @date = date
-    @time = time
+    @sport = options['sport']
+    @date = options['date']
+    @time = options['time']
+    @athletes = options['athletes']
+    @results = {}
   end
   
 end
