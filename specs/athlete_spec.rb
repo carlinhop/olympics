@@ -2,14 +2,14 @@ require('minitest/autorun')
 require('minitest/rg')
 require_relative('../models/athlete')
 require_relative('../models/sport')
-require_relative('../models/nation')
+require_relative('../models/country')
 
 class TestAthlete < MiniTest::Test
 
   def setup()
   @judo = Sport.new("Judo")
-  @haiti = Nation.new("Haiti")
-  @athlete = Athlete.new("Henry", @judo, @haiti)
+  @haiti = Country.new("Haiti")
+  @athlete = Athlete.new(name: "Henry", sport: @judo, country: @haiti)
   end
 
   def test_athlete_exist
@@ -25,7 +25,7 @@ class TestAthlete < MiniTest::Test
   end
 
   def test_athlete_has_nation
-    assert_equal("Haiti", @athlete.nation.name)
+    assert_equal("Haiti", @athlete.country.name)
   end
   
 end
