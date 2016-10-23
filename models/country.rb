@@ -1,10 +1,13 @@
-class Country
+require('pry-byebug')
+require_relative('../db/helper')
+
+
+class Country < Helper
   attr_accessor :name, :gold, :silver, :bronze, :points, :athletes
   
   def initialize(name)
     @id = nil
     @name = name
-    @athletes = []
     @gold = 0
     @silver = 0
     @bronze = 0
@@ -16,8 +19,11 @@ class Country
     return @points
   end
 
-
-
-
-
+  def all_athletes
+    #returns all athletes of the country
+    
+  end
 end
+
+angola = Country.new("Angola")
+angola.save("countries")
