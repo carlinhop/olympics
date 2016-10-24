@@ -39,15 +39,19 @@ class Country
     
   end
 
-  # def update_points
-  #   @points = (@gold * 5) + (@silver * 3) + @bronze
-  #   return @points
-  # end
+  def self.find(id)
+    sql = "select * from countries where id = #{id}"
+    countries = SqlRunner.run(sql).first
+    result = Country.new(countries)
+    return result
+  end
 
-  # def all_athletes
-  #   #returns all athletes of the country
-    
-  # end
+  def update_points
+    @points = (@gold * 5) + (@silver * 3) + @bronze
+    return @points
+  end
+
+
 
 end
 

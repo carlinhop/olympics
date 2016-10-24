@@ -42,7 +42,13 @@ class Participation
    sql = "delete from participations where id = #{id}"
    SqlRunner.run(sql)
    puts "Participation #: #{id} was destroyed"
-   
+ end
+
+ def self.find(id)
+   sql = "select * from participations where id = #{id}"
+   participation = SqlRunner.run(sql).first
+   result = Participation.new(participation)
+   return result
  end
 
 end

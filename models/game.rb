@@ -1,5 +1,6 @@
 
 require_relative('country')
+
 class Game
   attr_accessor :id, :name, :year
   
@@ -32,13 +33,19 @@ class Game
     sql = "delete from games where id = #{id}"
     SqlRunner.run(sql)
     puts "Game #: #{id} was destroyed"
-    
+  end
+
+  def self.find(id)
+    sql = "select * from games where id = #{id}"
+    game = SqlRunner.run(sql).first
+    result = Game.new(game)
+    return result
   end
 
   def country_ranking
-    @countries.each{|country| country.update_points()}
-    ranking = @countries.sort_by{ |country| country.points  }
-    
+    Country.all.each{|country| country.update_points()}
+    ranking = Country.all.sort_by{ |country| country.points  }.reverse
+    return ranking
     
   end
 

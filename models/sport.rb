@@ -31,7 +31,13 @@ class Sport
     sql = "delete from sports where id = #{id}"
     SqlRunner.run(sql)
     puts "Sport #: #{id} was destroyed"
-    
+  end
+
+  def self.find(id)
+    sql = "select * from sports where id = #{id}"
+    sport = SqlRunner.run(sql).first
+    result = Sport.new(sport)
+    return result
   end
 
 

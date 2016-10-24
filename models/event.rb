@@ -38,6 +38,13 @@ class Event
     puts "Event #: #{id} was destroyed"
     
   end
+
+  def self.find(id)
+    sql = "select * from events where id = #{id}"
+    event = SqlRunner.run(sql).first
+    result = Event.new(event)
+    return result
+  end
   #knows its athletes
   #knows its results
 

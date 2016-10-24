@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+<% @game.country_ranking.each do |country| %>
+  <%= "#{country.name}: #{country.points}" %>
+
+<%end %>
+
+</body>
+</html>

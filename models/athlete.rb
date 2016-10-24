@@ -38,6 +38,13 @@ class Athlete
     
   end
 
+  def self.find(id)
+    sql = "select * from athletes where id = #{id}"
+    athlete = SqlRunner.run(sql).first
+    result = Athlete.new(athlete)
+    return result
+  end
+
 
 end
 
