@@ -9,11 +9,16 @@ require_relative('../models/country')
 class TestGame < MiniTest::Test
 
   def setup()
-  @judo = Sport.new("Judo")
-  @haiti = Country.new("Haiti")
-  @henry = Athlete.new(name: "Henry", sport: @judo, country: @haiti)
-  @game = Game.new(name: "Rio",year: 2016,athletes: [@henry] )
-  @game.countries << @haiti
+  @italy = Country.new('name' => "Italy")
+  @italy.gold = 10
+  @italy.save
+
+  @denmark = Country.new('name' => "Denmark")
+  @denmark.silver = 10
+  @denmark.save
+
+  @game = Game.new('name'=>"Rio", 'year'=> 2016)
+  @game.save
   end
 
   def test_game_exists
@@ -28,20 +33,11 @@ class TestGame < MiniTest::Test
     assert_equal(2016, @game.year)
   end
 
-  def test_game_has_athletes
-    assert_equal(true, @game.athletes != nil)
-  end
 
   def test_country_ranking
     
-    assert_equal("Haiti", @game.country_ranking.first.name)
-    @japan = Country.new("Japan")
-    @japan.gold += 1
-    @game.countries << @japan
-    @korea = Country.new("Korea")
-    @korea.gold += 5
-    @game.countries << @korea
-    assert_equal("Korea", @game.country_ranking.last.name)    
+    assert_equal("Italy", @game.country_ranking.first.name)
+  
   end
 
 end
