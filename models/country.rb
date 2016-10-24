@@ -48,6 +48,7 @@ class Country
 
   def update_points
     @points = (@gold * 5) + (@silver * 3) + @bronze
+    self.update
     return @points
   end
 
