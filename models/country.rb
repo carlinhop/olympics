@@ -20,12 +20,12 @@ class Country
     @id = country['id']
   end
 
-  # def self.all()
-  #   sql = "SELECT * FROM countries"
-  #   countries = SqlRunner.run( sql )
-  #   result = countries.map { |c| Country.new( c) }
-  #   return result
-  # end
+  def self.all()
+    sql = "SELECT * FROM countries"
+    countries = SqlRunner.run( sql )
+    result = countries.map { |c| Country.new( c) }
+    return result
+  end
 
 
   # def update_points

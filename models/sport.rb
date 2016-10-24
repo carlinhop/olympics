@@ -4,7 +4,7 @@ class Sport
   attr_accessor :id, :name
   
   def initialize(options)
-    @id = options['id']
+    @id = options['id'].to_i
     @name = options['name']
   end
 
@@ -13,8 +13,6 @@ class Sport
     sport = SqlRunner.run( sql ).first
     @id = sport['id']
   end
-
-
 
   def self.all()
     sql = "SELECT * FROM sports"

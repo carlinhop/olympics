@@ -16,6 +16,13 @@ class Game
     @id = game['id']
   end
 
+  def self.all()
+    sql = "SELECT * FROM games"
+    games = SqlRunner.run( sql )
+    results = games.map { |g| Game.new( g) }
+    return results
+  end
+
   def country_ranking
     @countries.each{|country| country.update_points()}
     ranking = @countries.sort_by{ |country| country.points  }

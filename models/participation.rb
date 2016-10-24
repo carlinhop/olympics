@@ -13,10 +13,10 @@ class Participation
 
  def initialize(options)
   @id = options['id'].to_i
-  @athlete_id = options['athlete'].id
-  @event_id = options['event'].id
+  @athlete_id = options['athlete_id']
+  @event_id = options['event_id']
   @athlete_position = options['athlete_position']
-  @game_id = options['game_id'].id
+  @game_id = options['game_id']
  end
 
 
@@ -24,6 +24,13 @@ class Participation
    sql = "INSERT INTO participations (athlete_id, event_id, athlete_position, game_id) VALUES ( #{@athlete_id}, #{ @event_id }, #{ @athlete_position }, #{ @game_id }) RETURNING *"
    participation = SqlRunner.run( sql ).first
    @id = participation['id']
+ end
+
+ def self.all()
+   sql = "SELECT * FROM participations"
+   participations = SqlRunner.run( sql )
+   result = participations.map { |p| Participation.new( p ) }
+   return result
  end
 
 end
