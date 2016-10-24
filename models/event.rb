@@ -4,7 +4,7 @@ require_relative('athlete')
 require_relative('country')
 
 class Event
-  attr_accessor :id ,:sport, :date, :time
+  attr_accessor :id ,:sport_id, :event_date, :event_time
   
   def initialize(options)
     @id = options['id'].to_i
@@ -27,6 +27,17 @@ class Event
     return result
   end
 
+  def update()
+    sql = "UPDATE events SET sport_id = #{@sport_id}, event_date = '#{@event_date}', event_time = '#{@event_time}' WHERE id = #{@id}"
+    SqlRunner.run(sql)
+  end
+
+  def self.destroy(id)
+    sql = "delete from events where id = #{id}"
+    SqlRunner.run(sql)
+    puts "Event #: #{id} was destroyed"
+    
+  end
   #knows its athletes
   #knows its results
 

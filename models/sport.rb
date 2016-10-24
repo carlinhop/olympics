@@ -21,6 +21,19 @@ class Sport
     return result
   end
 
+  def update()
+    sql = "UPDATE sports SET name = '#{@name}' WHERE id = #{@id}"
+    SqlRunner.run(sql)
+
+  end
+
+  def self.destroy(id)
+    sql = "delete from sports where id = #{id}"
+    SqlRunner.run(sql)
+    puts "Sport #: #{id} was destroyed"
+    
+  end
+
 
 end
 

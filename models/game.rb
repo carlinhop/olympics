@@ -23,6 +23,18 @@ class Game
     return results
   end
 
+  def update()
+    sql = "UPDATE games SET name = '#{@name}', year = #{@year} WHERE id = #{@id}"
+    SqlRunner.run(sql)
+  end
+
+  def self.destroy(id)
+    sql = "delete from games where id = #{id}"
+    SqlRunner.run(sql)
+    puts "Game #: #{id} was destroyed"
+    
+  end
+
   def country_ranking
     @countries.each{|country| country.update_points()}
     ranking = @countries.sort_by{ |country| country.points  }

@@ -33,6 +33,18 @@ class Participation
    return result
  end
 
+ def update()
+   sql = "UPDATE participations SET athlete_id = #{@athlete_id}, event_id = '#{@event_id}', athlete_position = '#{@athlete_position}', game_id = #{@game_id} WHERE id = #{@id}"
+   SqlRunner.run(sql)
+ end
+
+ def self.destroy(id)
+   sql = "delete from participations where id = #{id}"
+   SqlRunner.run(sql)
+   puts "Participation #: #{id} was destroyed"
+   
+ end
+
 end
 
 

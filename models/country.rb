@@ -27,6 +27,17 @@ class Country
     return result
   end
 
+  def update()
+    sql = "UPDATE countries SET name = '#{@name}',gold = #{@gold}, silver = #{@silver}, bronze = #{@bronze}, points = #{@points} WHERE id = #{@id}"
+    SqlRunner.run(sql)
+  end
+
+  def self.destroy(id)
+    sql = "delete from countries where id = #{id}"
+    SqlRunner.run(sql)
+    puts "Country #: #{id} was destroyed"
+    
+  end
 
   # def update_points
   #   @points = (@gold * 5) + (@silver * 3) + @bronze
