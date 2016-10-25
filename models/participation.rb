@@ -17,6 +17,8 @@ class Participation
   @event_id = options['event_id']
   @athlete_position = options['athlete_position']
   @game_id = options['game_id']
+
+  update_medals()
  end
 
 
@@ -36,6 +38,7 @@ class Participation
  def update()
    sql = "UPDATE participations SET athlete_id = #{@athlete_id}, event_id = '#{@event_id}', athlete_position = '#{@athlete_position}', game_id = #{@game_id} WHERE id = #{@id}"
    SqlRunner.run(sql)
+   update_medals()
  end
 
  def self.destroy(id)
@@ -49,6 +52,20 @@ class Participation
    participation = SqlRunner.run(sql).first
    result = Participation.new(participation)
    return result
+ end
+
+ def update_medals
+  athlete = Athlete.find(@athlete_id)
+  athlete_country = Country.find(athlete.country_id)
+  case @athlete_position
+   when 1 then 
+    athlete_country.gold += 1
+    when 2 then 
+     athlete_country.silver += 1
+   when 3 then 
+      athlete_country.bronze += 1
+  end
+  athlete_country.update() 
  end
 
 end

@@ -1,5 +1,6 @@
 get '/rankings' do
-  @game = Game.new('name'=>"Rio", 'year'=> 2016)
+  
+  @game = Game.find(1)
   
   erb(:game)
 end

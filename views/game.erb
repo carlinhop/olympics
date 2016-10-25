@@ -5,7 +5,7 @@
 </head>
 <body>
 <% @game.country_ranking.each do |country| %>
-  <%= "#{country.name}: #{country.points}" %>
+  <%= "#{country.name}: #{country.points}, Gold: #{country.gold} Silver: #{country.silver} Bronze: #{country.bronze}"%> <br>
 
 <%end %>
 

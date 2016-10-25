@@ -1,3 +1,4 @@
+require('pry-byebug')
 require_relative('models/sport')
 require_relative('models/athlete')
 require_relative('models/country')
@@ -8,7 +9,7 @@ require_relative('models/game')
 
 
 colombia = Country.new('name' =>'Colombia')
-colombia.gold = 10
+# colombia.gold = 10
 colombia.save
 # puts Country.all
 
@@ -47,7 +48,7 @@ game1.save
 
 # game1.year = 2020
 # game1.update
-
+binding.pry
 participation1 = Participation.new('athlete_id'=> 1, 'event_id'=> 1, 'athlete_position'=> 1, 'game_id' => 1)
 participation1.save
 
@@ -55,12 +56,12 @@ participation1.save
 # participation1.update
 
 
-puts Sport.find(1)
-puts Participation.find(1)
-puts Athlete.find(1)
-puts Country.find(1)
-puts Event.find(1)
-puts Game.find(1)
+# puts Sport.find(1)
+# puts Participation.find(1)
+# puts Athlete.find(1)
+# puts Country.find(1)
+# puts Event.find(1)
+# puts Game.find(1)
 
 #Sport.destroy(19)
 #Participation.destroy(19)
