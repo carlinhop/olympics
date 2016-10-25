@@ -24,3 +24,9 @@ get '/countries/:id/edit' do
    @country = Country.find(params['id'])
   erb(:'country/edit')
 end
+
+put '/countries/:id' do
+   @country = Country.find(params['id'])
+   @country.update_with_hash(params)
+   redirect('/countries')
+end

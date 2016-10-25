@@ -26,8 +26,8 @@ class Athlete
     return result
   end
 
-  def update()
-    sql = "UPDATE athletes SET name = '#{@name}',sport_id = #{@sport_id}, country_id = #{@country_id} WHERE id = #{@id}"
+  def update(options)
+    sql = "UPDATE athletes SET name = '#{options['name']}',sport_id = #{options['sport_id']}, country_id = #{options['country_id']} WHERE id = #{@id}"
     SqlRunner.run(sql)
   end
 

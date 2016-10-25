@@ -28,8 +28,13 @@ class Country
   end
 
   def update()
-    sql = "UPDATE countries SET name = '#{@name}',gold = #{@gold}, silver = #{@silver}, bronze = #{@bronze}, points = #{@points} WHERE id = #{@id}"
-    SqlRunner.run(sql)
+      sql = "UPDATE countries SET name = '#{@name}',gold = #{@gold}, silver = #{@silver}, bronze = #{@bronze}, points = #{@points} WHERE id = #{@id}"
+      SqlRunner.run(sql)
+  end
+
+  def update_with_hash(options)
+      sql = "UPDATE countries SET name = '#{options['name']}',gold = #{options['gold']}, silver = #{options['silver']}, bronze = #{options['bronze']}, points = #{options['points']} WHERE id = #{@id}"
+      SqlRunner.run(sql)
   end
 
   def self.destroy(id)

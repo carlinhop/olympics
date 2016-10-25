@@ -1,10 +1,21 @@
-<h1>Create an Country </h1>
+<h1>Edit a Country </h1>
 
 <form action = "/countries/<%= @country.id %>" method = "post">
 
 <label for= "name" >Name</label>
-<input type="text" name="name" value="<%= @country.name %>">  
+<input type="text" name="name" value="<%= @country.name %>">
 
+<label for= "gold" >Gold</label>
+<input type="number" name="gold" value="<%= @country.gold %>">
+
+<label for= "silver" >Silver</label>
+<input type="number" name="silver" value="<%= @country.silver %>">
+
+<label for= "bronze" >Bronze</label>
+<input type="number" name="bronze" value="<%= @country.bronze %>">
+
+<label for= "points" >Points</label>
+<input type="number" name="points" value="<%= @country.points %>">
 
 <input type="submit" value = "Send">
 <input type="hidden" name="_method" value = "put">

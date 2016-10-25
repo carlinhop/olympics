@@ -10,7 +10,6 @@ get '/athletes/new' do
 end
 
 
-
 post '/athletes' do
   @athlete = Athlete.new(params)
   @athlete.save
@@ -26,4 +25,10 @@ end
 get '/athletes/:id/edit' do
    @athlete = Athlete.find(params['id'])
   erb(:'athlete/edit')
+end
+
+put '/athletes/:id' do
+   @athlete = Athlete.find(params['id'])
+   @athlete.update(params)
+   redirect('/athletes')
 end
