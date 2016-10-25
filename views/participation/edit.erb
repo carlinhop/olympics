@@ -1,6 +1,6 @@
 <h1>Edit a participation </h1>
 
-<form action = "/participations" method = "post">
+<form action = "/participations/<%= @participation.id %>" method = "post">
 
 <label for= "athlete_id" >Athlete</label>
 <input type="text" name="athlete_id" value="<%=@participation.athlete_id  %>">  

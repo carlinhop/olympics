@@ -19,3 +19,8 @@ get '/sports/:id' do
   @sport = Sport.find(params['id'])
   erb(:'sport/show')
 end
+
+get '/sports/:id/edit' do
+   @sport = Sport.find(params['id'])
+  erb(:'sport/edit')
+end
