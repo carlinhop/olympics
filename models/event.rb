@@ -9,8 +9,8 @@ class Event
   def initialize(options)
     @id = options['id'].to_i
     @sport_id = options['sport_id']
-    @event_date = options['date']
-    @event_time = options['time']
+    @event_date = options['event_date']
+    @event_time = options['event_time']
 
   end
 
@@ -23,7 +23,7 @@ class Event
   def self.all()
     sql = "SELECT * FROM events"
     events = SqlRunner.run( sql )
-    result = events.map { |e| Event.new( e) }
+    result = events.map { |e| Event.new(e) }
     return result
   end
 

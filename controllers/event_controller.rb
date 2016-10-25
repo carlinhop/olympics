@@ -1,0 +1,22 @@
+require_relative('../models/event')
+
+get '/events' do
+  @events = Event.all  
+  erb(:'event/index')
+end
+
+get '/events/new' do
+  erb(:'event/new')
+end
+
+post '/events' do
+  @event = Event.new(params)
+  @event.save
+  redirect('/events')
+end
+
+
+get '/events/:id' do
+  @event = Event.find(params['id'])
+  erb(:'event/show')
+end

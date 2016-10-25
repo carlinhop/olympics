@@ -1,6 +1,6 @@
-get '/rankings' do
-  
+get '/ranking' do
+
   @game = Game.find(1)
   
-  erb(:game)
+  erb(:ranking)
 end
