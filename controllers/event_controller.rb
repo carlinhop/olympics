@@ -26,3 +26,14 @@ get '/events/:id/edit' do
    @event = Event.find(params['id'])
   erb(:'event/edit')
 end
+
+put '/events/:id' do
+   @event = Event.find(params['id'])
+   @event.update(params)
+   redirect('/events')
+end
+
+delete '/events/:id' do
+   Event.destroy(params['id'])
+   redirect('/events')
+end

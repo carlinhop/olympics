@@ -30,3 +30,8 @@ put '/countries/:id' do
    @country.update_with_hash(params)
    redirect('/countries')
 end
+
+delete '/countries/:id' do
+   Country.destroy(params['id'])
+   redirect('/countries')
+end

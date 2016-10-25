@@ -21,8 +21,8 @@ class Sport
     return result
   end
 
-  def update()
-    sql = "UPDATE sports SET name = '#{@name}' WHERE id = #{@id}"
+  def update(options)
+    sql = "UPDATE sports SET name = '#{options['name']}' WHERE id = #{@id}"
     SqlRunner.run(sql)
 
   end

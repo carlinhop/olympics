@@ -32,3 +32,8 @@ put '/athletes/:id' do
    @athlete.update(params)
    redirect('/athletes')
 end
+
+delete '/athletes/:id' do
+   Athlete.destroy(params['id'])
+   redirect('/athletes')
+end

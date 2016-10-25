@@ -24,3 +24,14 @@ get '/participations/:id/edit' do
    @participation = Participation.find(params['id'])
   erb(:'participation/edit')
 end
+
+put '/participations/:id' do
+   @participation = Participation.find(params['id'])
+   @participation.update(params)
+   redirect('/participations')
+end
+
+delete '/participations/:id' do
+   Participation.destroy(params['id'])
+   redirect('/participations')
+end

@@ -27,8 +27,8 @@ class Event
     return result
   end
 
-  def update()
-    sql = "UPDATE events SET sport_id = #{@sport_id}, event_date = '#{@event_date}', event_time = '#{@event_time}' WHERE id = #{@id}"
+  def update(options)
+    sql = "UPDATE events SET sport_id = #{options['sport_id']}, event_date = '#{options['event_date']}', event_time = '#{options['event_time']}' WHERE id = #{@id}"
     SqlRunner.run(sql)
   end
 

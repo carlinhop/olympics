@@ -24,3 +24,14 @@ get '/sports/:id/edit' do
    @sport = Sport.find(params['id'])
   erb(:'sport/edit')
 end
+
+put '/sports/:id' do
+   @sport = Sport.find(params['id'])
+   @sport.update(params)
+   redirect('/sports')
+end
+
+delete '/sports/:id' do
+   Sport.destroy(params['id'])
+   redirect('/sports')
+end

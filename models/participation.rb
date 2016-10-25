@@ -35,8 +35,8 @@ class Participation
    return result
  end
 
- def update()
-   sql = "UPDATE participations SET athlete_id = #{@athlete_id}, event_id = '#{@event_id}', athlete_position = '#{@athlete_position}', game_id = #{@game_id} WHERE id = #{@id}"
+ def update(options)
+   sql = "UPDATE participations SET athlete_id = #{options['athlete_id']}, event_id = '#{options['event_id']}', athlete_position = #{options['athlete_position']}, game_id = #{options['game_id']} WHERE id = #{@id}"
    SqlRunner.run(sql)
    update_medals()
  end
