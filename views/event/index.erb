@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+
+<% @events.each do |event| %>
+
+  Entry#
+  <%= "#{event.id}: Sport #{event.sport_id}, Date: #{event.event_date} Time: #{event.event_time}"%> <br>
+
+<%end %>
+
+</body>
+</html>

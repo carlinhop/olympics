@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+<% @countries.each do |country| %>
+  Entry#
+  <%= "#{country.id}: Country #{country.name}, Gold: #{country.gold}, Silver: #{country.silver}, Bronze: #{country.bronze} "%> <br>
+
+<%end %>
+
+</body>
+</html>
