@@ -1,4 +1,4 @@
-<h1>Edit an participation </h1>
+<h1>Edit a participation </h1>
 
 <form action = "/participations" method = "post">
 
@@ -15,5 +15,6 @@
 <input type="number" name="game_id" value="<%=@participation.game_id  %>">
 
 <input type="submit" value = "Send">
+<input type="hidden" name="_method" value = "put">
 
 </form>

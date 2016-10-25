@@ -20,3 +20,9 @@ get '/events/:id' do
   @event = Event.find(params['id'])
   erb(:'event/show')
 end
+
+
+get '/events/:id/edit' do
+   @event = Event.find(params['id'])
+  erb(:'event/edit')
+end
