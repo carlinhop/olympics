@@ -73,3 +73,15 @@ nav ul li{
 table {
   width: 100%;
 }
+
+.mascots{
+  display: flex;
+  flex-direction: column;
+  align-items: center
+  
+}
+
+.mascots img{
+
+  justify-content: center;
+}

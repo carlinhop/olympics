@@ -4,3 +4,7 @@ get '/ranking' do
   @game.country_ranking
   erb(:ranking)
 end
+
+get '/schedule' do
+  erb(:in_progress)
+end
