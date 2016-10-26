@@ -7,17 +7,17 @@
 </head>
 <body>
   <header>
-  <h1 class = "branding"><%= @game.name %></h1>
+  <h1 class = "branding"><%= settings.game.name %></h1>
   <br>
   </header>
 
   <nav>
     <ul>
-      <li>Athletes</li>
-      <li>Countries</li>
-      <li>Events</li>
-      <li>Results</li>
-      <li>Schedule</li>
+      <li><a href="/athletes">Athletes</a></li>
+      <li><a href="/countries">Countries</a></li>
+      <li><a href="/events">Events</a></li>
+      <li><a href="/participations">Results</a></li>
+      <li><a href="/schedule">Schedule</a></li>
     </ul>
   </nav>
   <div class="container">

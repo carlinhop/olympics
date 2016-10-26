@@ -1,4 +1,8 @@
 require_relative('../models/sport')
+require_relative('../models/game')
+
+
+@game = Game.find(1)
 
 get '/sports' do
   @sports = Sport.all  

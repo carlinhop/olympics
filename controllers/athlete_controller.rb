@@ -1,14 +1,13 @@
 require_relative('../models/athlete')
-require_relative('../models/game')
 
 get '/athletes' do
-  @game = Game.find(1)
+  puts settings.game
   @athletes = Athlete.all
   erb(:'athlete/index')
 end
 
 get '/athletes/new' do
-  @game = Game.find(1)
+  
   erb(:'athlete/new')
 end
 
@@ -21,14 +20,14 @@ post '/athletes' do
 end
 
 get '/athletes/:id' do
-  @game = Game.find(1)
+ 
   @athlete = Athlete.find(params['id'])
   erb(:'athlete/edit')
 end
 
 
 get '/athletes/:id/edit' do
-  @game = Game.find(1)
+  
    @athlete = Athlete.find(params['id'])
   erb(:'athlete/edit')
 end

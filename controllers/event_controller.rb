@@ -1,4 +1,8 @@
 require_relative('../models/event')
+require_relative('../models/game')
+
+
+@game = Game.find(1)
 
 get '/events' do
   @events = Event.all  

@@ -1,6 +1,11 @@
 require_relative('../models/country')
+require_relative('../models/game')
+
+
+@game = Game.find(1)
 
 get '/countries' do
+  @game = Game.find(1)
   @countries = Country.all  
   erb(:'country/index')
 end
