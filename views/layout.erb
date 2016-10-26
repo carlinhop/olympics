@@ -6,8 +6,28 @@
   <link rel="stylesheet" href="/olympic.css">
 </head>
 <body>
-<div class="container">
-<%= yield  %>
-</div>
+  <header>
+  <h1 class = "branding"><%= @game.name %></h1>
+  <br>
+  </header>
+
+  <nav>
+    <ul>
+      <li>Athletes</li>
+      <li>Countries</li>
+      <li>Events</li>
+      <li>Results</li>
+      <li>Schedule</li>
+    </ul>
+  </nav>
+  <div class="container">
+  <%= yield  %>
+  </div>
+
+  <footer>
+  
+  </footer>
+
+
 </body>
 </html>

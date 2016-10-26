@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title></title>
-</head>
-<body>
+
 <% @participations.each do |participation| %>
   Entry#
   <%= "#{participation.id}: Athlete #{participation.athlete_id}, Event: #{participation.event_id} Position: #{participation.athlete_position} "%> <br>
 
 <%end %>
-
-</body>
-</html>

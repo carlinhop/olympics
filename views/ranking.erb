@@ -1,8 +1,5 @@
-<div class ="rings">
 
-</div>
-<h1 class = "branding"><%= @game.name %></h1>
-<br>
+
 <table class= "grid">
   <tr class = "grid-row ">
       <th class = "cell">Rank</th>
@@ -13,9 +10,9 @@
       <th class = "cell">Bronze</th>
   </tr>
 
-<% @game.country_ranking.each_with_index do |country, index| %>
+<% @game.country_ranking.each_with_index do |country, index | %>
   <tr class = "grid-row ">
-  <td class = "cell"><%= "#{index}"%> </td>
+  <td class = "cell"><%= "#{index +1 }"%> </td>
 
   <td class = "cell"><%= "#{country.name}"%> </td>
   <td class = "cell"><%="#{country.points}"%> </td>
