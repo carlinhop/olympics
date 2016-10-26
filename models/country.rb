@@ -1,3 +1,4 @@
+require('pry-byebug')
 require_relative('../db/sql_runner')
 
 
@@ -13,6 +14,8 @@ class Country
     @bronze = options['bronze'].to_i
     @points = options['points'].to_i
   end
+
+
 
   def save()
     sql = "INSERT INTO countries (name, gold, silver, bronze, points) VALUES ('#{ @name }', #{ @gold }, #{ @silver }, #{ @bronze }, #{ @points }) RETURNING *"
@@ -30,6 +33,7 @@ class Country
   def update()
       sql = "UPDATE countries SET name = '#{@name}',gold = #{@gold}, silver = #{@silver}, bronze = #{@bronze}, points = #{@points} WHERE id = #{@id}"
       SqlRunner.run(sql)
+
   end
 
   def update_with_hash(options)
@@ -53,7 +57,8 @@ class Country
 
   def update_points
     @points = (@gold * 5) + (@silver * 3) + @bronze
-    self.update
+    
+    update
     return @points
   end
 

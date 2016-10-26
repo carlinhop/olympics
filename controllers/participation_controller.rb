@@ -32,7 +32,8 @@ end
 put '/participations/:id' do
    @participation = Participation.find(params['id'])
    @participation.update(params)
-   redirect('/participations')
+
+   redirect('/countries')
 end
 
 delete '/participations/:id' do

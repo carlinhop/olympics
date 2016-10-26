@@ -33,7 +33,7 @@ end
 put '/countries/:id' do
    @country = Country.find(params['id'])
    @country.update_with_hash(params)
-   redirect('/countries')
+   redirect('/ranking')
 end
 
 delete '/countries/:id' do
