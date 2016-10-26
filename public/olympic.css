@@ -1,8 +1,43 @@
 body {
-  background-color: black;
-  color: blue;
+  background: url("Olympic_rings_with_white_rims.svg") no-repeat;
+    background-size: 10%;
+
+  font-family: 'Ubuntu Condensed', sans-serif;
 }
 
-.test {
-  color: red;
+.branding{
+  width: 100%;
+  margin-left: 10%
+}
+
+.rings{
+
+}
+
+.container {
+  
+  align-self: auto;
+}
+
+
+
+.grid {
+  border: 1px solid dodgerblue;
+}
+
+.grid-row {
+  display: flex;
+  
+
+}
+
+.cell {
+  flex:1;
+  padding: 10px;
+  text-align: center;
+  
+}
+
+table {
+  width: 100%;
 }
