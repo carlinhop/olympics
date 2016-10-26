@@ -1,8 +1,34 @@
+<h1>Events</h1>
+
+<button class = "button"><a href="events/new">New Event</a></button>
+
+<div class = "grid">
+  <div class="grid-row">
+    <div class= "cell"> ID</div>
+    <div class= "cell"> Sport</div>
+    <div class= "cell"> Date</div>
+    <div class= "cell"> Time</div>
+  </div>
+
+
 
 <% @events.each do |event| %>
 
-  Entry#
-  <%= "#{event.id}: Sport #{event.sport_id}, Date: #{event.event_date} Time: #{event.event_time}"%> <br>
+<div class="grid-row">
+  <div class= "cell"> <a href="/events/<%= event.id %>"> <%= "#{event.id}" %></a></div>
 
+  <div class= "cell"> <%= "#{event.sport_id}" %> </div>
+  <div class= "cell"> <%= "#{event.event_date}" %> </div>
+  <div class= "cell"> <%= "#{event.event_time}" %> </div>
+  
+</div>
 <%end %>
+
+
+
+
+
+
+
+
 

@@ -22,7 +22,7 @@ end
 
 get '/events/:id' do
   @event = Event.find(params['id'])
-  erb(:'event/show')
+  erb(:'event/edit')
 end
 
 

@@ -1,5 +1,13 @@
 <h1>Edit an event </h1>
 
+<form action= "/events/<%= @event.id %>" method = "post">
+
+<input class = "button" type= "submit" value="Delete Event"></button>
+<input type="hidden" name="_method" value = "delete">
+</form>
+
+
+
 <form action = "/events/<%= @event.id %>" method = "post">
 
 <label for= "sport_id" >Sport</label>

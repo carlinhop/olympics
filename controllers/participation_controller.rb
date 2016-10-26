@@ -21,7 +21,7 @@ end
 
 get '/participations/:id' do
   @participation = Participation.find(params['id'])
-  erb(:'participation/show')
+  erb(:'participation/edit')
 end
 
 get '/participations/:id/edit' do

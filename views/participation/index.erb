@@ -1,6 +1,24 @@
+<h1>Athletes Results</h1>
+
+<button class = "button"><a href="participations/new">New Result</a></button>
+
+<div class = "grid">
+  <div class="grid-row">
+    <div class= "cell"> ID</div>
+    <div class= "cell"> Athlete</div>
+    <div class= "cell"> Event</div>
+    <div class= "cell"> Position</div>
+  </div>
+
 
 <% @participations.each do |participation| %>
-  Entry#
-  <%= "#{participation.id}: Athlete #{participation.athlete_id}, Event: #{participation.event_id} Position: #{participation.athlete_position} "%> <br>
+  <div class="grid-row">
+    <div class= "cell"> <a href="/participations/<%= participation.id %>"> <%= "#{participation.id}" %></a></div>
+
+    <div class= "cell"> <%= "#{participation.athlete_id}" %> </div>
+    <div class= "cell"> <%= "#{participation.event_id}" %> </div>
+    <div class= "cell"> <%= "#{participation.athlete_position}" %> </div>
+    
+  </div>
 
 <%end %>

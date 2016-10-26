@@ -1,4 +1,10 @@
-<h1>Edit a participation </h1>
+<h1>Edit a Result </h1>
+
+<form action= "/participations/<%= @participation.id %>" method = "post">
+
+<input class = "button" type= "submit" value="Delete Result"></button>
+<input type="hidden" name="_method" value = "delete">
+</form>
 
 <form action = "/participations/<%= @participation.id %>" method = "post">
 

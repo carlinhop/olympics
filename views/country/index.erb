@@ -1,6 +1,32 @@
+<h1>Countries</h1>
+
+<button class = "button"><a href="countries/new">New Country</a></button>
+
+<div class = "grid">
+  <div class="grid-row">
+    <div class= "cell"> ID</div>
+    <div class= "cell"> Name</div>
+    <div class= "cell"> Gold</div>
+    <div class= "cell"> Silver</div>
+    <div class= "cell"> Bronze</div>
+  </div>
+
 
 <% @countries.each do |country| %>
-  Entry#
-  <%= "#{country.id}: Country #{country.name}, Gold: #{country.gold}, Silver: #{country.silver}, Bronze: #{country.bronze} "%> <br>
+
+<div class="grid-row">
+  <div class= "cell"> <a href="/countries/<%= country.id %>"> <%= "#{country.id}" %></a></div>
+  <div class= "cell"> <%= "#{country.name}" %> </div>
+
+  <div class= "cell"> <%= "#{country.gold}" %> </div>
+  <div class= "cell"> <%= "#{country.silver}" %> </div>
+  <div class= "cell"> <%= "#{country.bronze}" %> </div>
+  
+</div>
+  
+
 
 <%end %>
+
+
+</div>
