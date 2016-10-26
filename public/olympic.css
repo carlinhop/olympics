@@ -38,6 +38,14 @@ nav ul li{
   margin: 0 auto 0 auto;
 }
 
+button{
+  height: 4%;
+  width: 10%;
+  background-color: white;
+  border: 1px solid dodgerblue;
+  margin:0 2.5% 2.5% 0;
+  display: inline-block;
+}
 .container {
   
   align-self: auto;

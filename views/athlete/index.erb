@@ -1,21 +1,24 @@
 
 <h1>Athletes</h1>
+
+<button><a href="athletes/new">New Athlete</a></button>
+
 <div class = "grid">
   <div class="grid-row">
     <div class= "cell"> ID</div>
     <div class= "cell"> Name</div>
-    <div class= "cell"> Name</div>
+    <div class= "cell"> Country</div>
     <div class= "cell"> Sport</div>
   </div>
 
 <% @athletes.each do |athlete| %>
 
   <div class="grid-row">
-    <div class= "cell">  <%= "#{athlete.id}" %> </div>
+    <div class= "cell"> <a href="/athletes/<%= athlete.id %>"> <%= "#{athlete.id}" %></a></div>
     <div class= "cell"> <%= "#{athlete.name}" %> </div>
     <div class= "cell"> <%= "#{athlete.country_id}" %> </div>
     <div class= "cell"> <%= "#{athlete.sport_id}" %> </div>
-
+    
   </div>
 
 
