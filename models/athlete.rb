@@ -45,6 +45,16 @@ class Athlete
     return result
   end
 
+  def sport
+    sport = Sport.find(self.sport_id)
+    return sport
+  end
+
+  def country
+      country = Country.find(self.country_id)
+      return country
+  end
+
 
 end
 

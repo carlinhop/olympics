@@ -45,7 +45,12 @@ class Event
     result = Event.new(event)
     return result
   end
+
   #knows its athletes
+
+  def athletes
+    
+  end
   #knows its results
 
   

@@ -8,9 +8,9 @@ require_relative('models/game')
 
 
 
-colombia = Country.new('name' =>'Colombia')
-# colombia.gold = 10
-colombia.save
+# colombia = Country.new('name' =>'Colombia')
+# # colombia.gold = 10
+# colombia.save
 # puts Country.all
 
 swimming = Sport.new('name' => "Swimming")
